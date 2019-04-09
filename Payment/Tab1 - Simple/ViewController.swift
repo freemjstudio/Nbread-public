@@ -10,6 +10,8 @@ import UIKit
 
 class ViewController: UIViewController {
 
+  
+    
     
     
     @IBOutlet weak var meetingTitle: UITextField!
@@ -41,6 +43,7 @@ class ViewController: UIViewController {
         resultPay = paymentInt/Double(peopleNumInt)
         resultFinal = resultPay.rounded(.toNearestOrAwayFromZero)
         
+        //값 console창에서 출력하는 코드
         print(resultPay)
         print(resultFinal)
         

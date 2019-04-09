@@ -74,22 +74,14 @@ class AddedTableViewController: UIViewController,UITableViewDataSource,UITableVi
     } 
     
     
-    // 저장하기 버튼 :: 값전달
+    // 저장하기 버튼 :: 이전 화면으로 값전달하기
     @IBAction func save(_ sender: Any) {
-        guard let cvc = self.storyboard?.instantiateViewController(withIdentifier: "CVC") else {
+        guard let cvc = self.storyboard?.instantiateViewController(withIdentifier: "CVC") as? ComplexViewController else {
             return
         }
-        /*
-         //presentingViewController 속성을 통해 이전 화면 객체를 읽어온 다음, ViewController 타입으로 캐스팅한다.
-         let preVC = self.presentingViewController
-         guard let vc = preVC as? ViewController else {
-         return
-         }
- 
- */
-        
-        
-        
+        cvc.gvoSet = self.gvo
+        cvc.baramObject = self.gvo.paramObject
+        cvc.baramPayment = self.gvo.paramPaymentObj
     }
     
  }
